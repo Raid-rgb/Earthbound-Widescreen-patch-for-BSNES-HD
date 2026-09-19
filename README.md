@@ -10,7 +10,7 @@ A .bps patch that enables 16:9 widescreen rendering when played on the bsnes-hd 
 ## Installation (patching)
 
 * Patch your ROM with the matching .bps file from [Releases](../../releases) using any BPS patcher (such as [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/)).
-* Your Maternalbound Redux rom must be patched with the [romhacking.net](https://www.romhacking.net/hacks/4964/) version for now (NOT THE GITHUB VERSION). 
+
 ---
 
 ## Emulator Configuration (`bsnes-hd`)
