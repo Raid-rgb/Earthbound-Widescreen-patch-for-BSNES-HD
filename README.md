@@ -1,4 +1,3 @@
-# Earthbound Widescreen
 
 A .bps patch that enables 16:9 widescreen rendering when played on the bsnes-hd emulator.
 
@@ -8,7 +7,7 @@ A .bps patch that enables 16:9 widescreen rendering when played on the bsnes-hd 
 
 ---
 
-## Installation (Patching)
+## Installation (patching)
 
 Patch your ROM with the matching .bps file from [Releases](../../releases) using any BPS patcher (such as [Rom Patcher JS](https://www.marcrobledo.com/RomPatcher.js/)).
 
