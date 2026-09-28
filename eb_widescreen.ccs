@@ -1,0 +1,37 @@
+// EarthBound widescreen hack by Raid
+// Credit to GiovannyGB for the original Widescreen Backgrounds hack
+//------------------------------------
+// Viewport & Camera Hooks (Bank $C0)
+//------------------------------------
+// Expands viewport from 34 to 49 tiles (CMP #$0031)
+ROM[0xC00F06] = [C9 31 00]
+
+// Right scroll trigger (ADC #$0028)
+ROM[0xC015E4] = [69 28 00]
+
+// Jumps to left origin routine at $C0FF58
+ROM[0xC00E43] = [4C 58 FF]
+
+// Jumps to left scroll routine at $C0FF70 (JMP $FF70, NOP)
+ROM[0xC0163A] = [4C 70 FF EA]
+
+//------------------------------------
+// Sprite Culling Hook (Bank $C0)
+//------------------------------------
+// Jumps to sprite check at $C0FF80 (JMP $FF80, NOP)
+ROM[0xC08D47] = [4C 80 FF EA]
+
+//------------------------------------
+// Custom Subroutines (Bank $C0 padding)
+//------------------------------------
+// Left camera origin (8x DEC A, STA $20, JMP $0E46)
+ROM[0xC0FF58] = [3A 3A 3A 3A 3A 3A 3A 3A 85 20 4C 46 0E]
+
+// Data table values
+ROM[0xC0FF6D] = [83 98 9F]
+
+// Left scroll trigger (8x DEC A, JSR $0FCB, JMP $163E)
+ROM[0xC0FF70] = [3A 3A 3A 3A 3A 3A 3A 3A 20 CB 0F 4C 3E 16]
+
+// Checks if high byte is $01 or $FF so actors aren't culled past the 8:7 frame, then returns to $8D4B
+ROM[0xC0FF80] = [C9 01 F0 07 C9 FF F0 05 4C 21 8D A9 FF 4C 4B 8D]
